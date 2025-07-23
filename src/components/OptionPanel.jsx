@@ -40,6 +40,9 @@ function OptionPanel() {
         letterSpacing, setLetterSpacing,
         paddingLeftRight, setPaddingLeftRight,
         paddingTopBottom, setPaddingTopBottom,
+        nameBgColor, setNameBgColor,
+        nameColor, setNameColor,
+        nameColorCheck, setNameColorCheck
     } = useCssStore();
     const fontList = [
         {
@@ -397,6 +400,21 @@ function OptionPanel() {
                     <span className='inline_label'>시청자 이름 줄바꿈</span>
                     <input type="checkbox" checked={blockNickname} onChange={e => setBlockNickname(e.target.checked)} />
                 </label>
+                {blockNickname && (
+                <div className='effectOptions'>
+                {/* 방송공지 사용 체크시 노출 */}
+                    <ColorPickerField label="이름 배경색" color={nameBgColor} onChange={setNameBgColor} allowTransparent={true} />
+                </div>
+                )}
+            </div>
+            <div className="chatting_row">
+                    <label>
+                        <span className='inline_label'>시청자 이름 글자색 강제설정</span>
+                        <input type="checkbox" checked={nameColorCheck} onChange={e => setNameColorCheck(e.target.checked)} />
+                    </label>
+                    {nameColorCheck && (
+                        <ColorPickerField label="" color={nameColor} onChange={setNameColor} allowTransparent={false} />
+                    )}
             </div>
             <div className='chatting_row'>
                 <label>

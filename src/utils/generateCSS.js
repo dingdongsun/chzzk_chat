@@ -40,6 +40,9 @@ export function generateCSS(state, {
         noticeRadius,
         showNickname,
         noticeTextColor,
+        nameBgColor,
+        nameColor,
+        nameColorCheck,
     } = state;
     function rgbaToCss({ r, g, b, a }) {
         return `rgba(${r}, ${g}, ${b}, ${a})`;
@@ -125,6 +128,40 @@ export function generateCSS(state, {
 `,
         'none': ''
     };
+
+
+        const fontEffect2Map = {
+        'thin-outline': `
+[class*=name_has_highlight] [class*=name_text] {
+  filter: drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 1px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px) !important;
+}
+`,
+        'bold-outline': `
+[class*=name_has_highlight] [class*=name_text] {
+  filter: drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 2px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0.2px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0.1px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px)
+  drop-shadow(${rgbaToCss(fontEffectColor)} 0px 0px 0px) !important;
+}
+`,
+        'shadow': `
+
+
+[class*=name_has_highlight] [class*=name_text] {
+  filter: drop-shadow(${rgbaToCss(fontEffectColor)} ${shadowX}px ${shadowY}px ${shadowBlur}px) !important;
+}
+`,
+        'none': ''
+    };
+
+
     return `
 @font-face {
   font-family: ${fontFamily};
@@ -209,6 +246,7 @@ ${mediachattingHeight}
   margin-bottom: ${chatMarginBottom}px;
   ${boxEffectMap[boxEffect] || ''}
 }
+  
 ${enableFadeOut
             ? `
 @keyframes chatting {
@@ -253,11 +291,44 @@ ${showNickname
   `}
 ${blockNickname
             ? `
-[class*=live_chatting_username_container] {
-  display: block;
-}
+            [class^=live_chatting_message_wrapper] {
+              padding: 0!important;
+            }
+            [class*=live_chatting_username_container] {
+              display: block;
+              margin-right: 0!important;
+              padding: ${paddingTopBottom}px ${paddingLeftRight}px !important;
+              border-radius: ${chatRadius}px ${chatRadius}px 0 0;
+              background-color: ${rgbaToCss(nameBgColor)}
+            }
+            [class*=live_chatting_message_text] {
+              display: block;
+              padding: ${
+                nameBgColor.a === 0
+                  ? `0px ${paddingLeftRight}px ${paddingTopBottom}px !important`
+                  : `${paddingTopBottom}px ${paddingLeftRight}px !important`
+              };
+            }
   `
             : ''}
+${nameColorCheck ? `
+            [class*=live_chatting_username_nickname],
+            [class*=live_chatting_username_container][class*=live_chatting_username_has_gradient] [class*=live_chatting_username_nickname] {
+              color: ${rgbaToCss(nameColor)} !important;
+              background: none!important;
+            }
+            [class*=name_has_highlight] {
+              margin: 0;
+              padding: 0;
+            }
+            [class*=name_has_highlight] [class*=name_text] {
+                margin: 0px!important;
+                padding: 0px!important;
+                border-radius: 6px;
+                background: none!important;
+            }
+                ${fontEffect2Map[fontEffect] || ''}
+            ` : ''}
 [class^=live_chatting_message_container] [class^=live_chatting_message_text] {
   color: ${rgbaToCss(chatTextColor)}!important;
   vertical-align: baseline;

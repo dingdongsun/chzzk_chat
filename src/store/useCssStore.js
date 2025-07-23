@@ -39,6 +39,12 @@ const useCssStore = create((set) => ({
     paddingTopBottom: 8,
     paddingLeftRight: 13,
     previewScale: 1,
+    nameBgColor: { r: 255, g: 255, b: 255, a: 0 },
+    nameColor: { r: 255, g: 255, b: 255, a: 1 },
+    nameColorCheck: false,
+    setNameBgColor: (v) => set({ nameBgColor: v }),
+    setNameColor: (v) => set({ nameColor: v }),
+    setNameColorCheck: (v) => set({ nameColorCheck: v }),
     setPreviewScale: (v) => set({ previewScale: v }),
     setFontFamily: (name, url) => set({
         fontFamily: name,
