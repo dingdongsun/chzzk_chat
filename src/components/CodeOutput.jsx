@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import useCssStore from '../store/useCssStore';
 import { generateCSS } from '../utils/generateCSS';
 function simpleCssMinify(css) {
