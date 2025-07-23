@@ -259,6 +259,7 @@ table {
     max-height: calc(80vh - 4rem - 77px);
     overflow: auto;
     padding-right: 0.5rem;
+    align-items: flex-end;
 }
 [class^=live_overlay_item]:first-of-type {
     margin-bottom: 0;
@@ -284,11 +285,6 @@ table {
     .preview-panel [class^=live_overlay_chatting] {
         max-height: calc(500px - 4rem - 77px);
     }
-
-    .preview-panel [class^=live_overlay_chatting] {
-        align-items: flex-end;
-    }
-    
     @media screen and (max-width: 768px) {
         .custom-view {
             flex-direction: column;
