@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/chzzk_chat/static/css/main.d7bda5e7.css",
-    "main.js": "/chzzk_chat/static/js/main.3e0d69ac.js",
-    "static/js/453.26bdb0b6.chunk.js": "/chzzk_chat/static/js/453.26bdb0b6.chunk.js",
-    "static/media/bg.jpg": "/chzzk_chat/static/media/bg.66e88436074c6ac31e56.jpg",
-    "static/media/bg1.jpg": "/chzzk_chat/static/media/bg1.66e88436074c6ac31e56.jpg",
-    "index.html": "/chzzk_chat/index.html",
-    "static/media/logo.svg": "/chzzk_chat/static/media/logo.378028c14cf4b820b1022457fb63db18.svg",
-    "main.d7bda5e7.css.map": "/chzzk_chat/static/css/main.d7bda5e7.css.map",
-    "main.3e0d69ac.js.map": "/chzzk_chat/static/js/main.3e0d69ac.js.map",
-    "453.26bdb0b6.chunk.js.map": "/chzzk_chat/static/js/453.26bdb0b6.chunk.js.map"
+    "main.css": "/static/css/main.ad96ba19.css",
+    "main.js": "/static/js/main.d011d271.js",
+    "static/js/453.26bdb0b6.chunk.js": "/static/js/453.26bdb0b6.chunk.js",
+    "static/media/bg.jpg": "/static/media/bg.66e88436074c6ac31e56.jpg",
+    "static/media/bg1.jpg": "/static/media/bg1.66e88436074c6ac31e56.jpg",
+    "index.html": "/index.html",
+    "static/media/logo.svg": "/static/media/logo.378028c14cf4b820b1022457fb63db18.svg",
+    "main.ad96ba19.css.map": "/static/css/main.ad96ba19.css.map",
+    "main.d011d271.js.map": "/static/js/main.d011d271.js.map",
+    "453.26bdb0b6.chunk.js.map": "/static/js/453.26bdb0b6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7bda5e7.css",
-    "static/js/main.3e0d69ac.js"
+    "static/css/main.ad96ba19.css",
+    "static/js/main.d011d271.js"
   ]
 }
