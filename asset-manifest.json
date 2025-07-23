@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/chzzk_chat/static/css/main.b82f6ded.css",
-    "main.js": "/chzzk_chat/static/js/main.535f6822.js",
+    "main.css": "/chzzk_chat/static/css/main.ef306adc.css",
+    "main.js": "/chzzk_chat/static/js/main.6567481f.js",
     "static/js/453.26bdb0b6.chunk.js": "/chzzk_chat/static/js/453.26bdb0b6.chunk.js",
+    "static/media/bg.jpg": "/chzzk_chat/static/media/bg.66e88436074c6ac31e56.jpg",
+    "static/media/logo.svg": "/chzzk_chat/static/media/logo.378028c14cf4b820b1022457fb63db18.svg",
     "index.html": "/chzzk_chat/index.html",
-    "main.b82f6ded.css.map": "/chzzk_chat/static/css/main.b82f6ded.css.map",
-    "main.535f6822.js.map": "/chzzk_chat/static/js/main.535f6822.js.map",
+    "main.ef306adc.css.map": "/chzzk_chat/static/css/main.ef306adc.css.map",
+    "main.6567481f.js.map": "/chzzk_chat/static/js/main.6567481f.js.map",
     "453.26bdb0b6.chunk.js.map": "/chzzk_chat/static/js/453.26bdb0b6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b82f6ded.css",
-    "static/js/main.535f6822.js"
+    "static/css/main.ef306adc.css",
+    "static/js/main.6567481f.js"
   ]
 }
