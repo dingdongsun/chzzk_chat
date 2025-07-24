@@ -259,6 +259,9 @@ table {
     max-height: calc(80vh - 4rem - 77px);
     overflow: auto;
     padding-right: 0.5rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: 0;
     /* align-items: flex-end; */
 }
 [class^=live_overlay_item]:first-of-type {
