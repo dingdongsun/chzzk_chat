@@ -6,47 +6,65 @@ import PresetButton from './PresetButton';
 
 function OptionPanel() {
     const {
+        // 기본 정보
+        viewerNickname, setViewerNickname,
+
+        // 배경
+        bodyBgColor, setBodyBgColor,
+
+        // 글꼴 관련
         fontFamily, setFontFamily,
         fontSize, setFontSize,
+        fontBold, setFontBold,
         lineHeight, setLineHeight,
+        letterSpacing, setLetterSpacing,
         fontEffect, setFontEffect,
         fontEffectColor, setFontEffectColor,
         shadowX, setShadowX,
         shadowY, setShadowY,
         shadowBlur, setShadowBlur,
+
+        // 정렬
+        align, setAlign,
+
+        // 채팅 스타일
+        paddingLeftRight, setPaddingLeftRight,
+        paddingTopBottom, setPaddingTopBottom,
+        chatBgColor, setChatBgColor,
+        chatTextColor, setChatTextColor,
+        chatRadius, setChatRadius,
+        chatMarginBottom, setChatMarginBottom,
         boxEffect, setBoxEffect,
         boxEffectColor, setBoxEffectColor,
         boxBorder, setBoxBorder,
         boxShadowX, setBoxShadowX,
         boxShadowY, setBoxShadowY,
         boxShadowBlur, setBoxShadowBlur,
-        chatBgColor, setChatBgColor,
-        chatTextColor, setChatTextColor,
-        bodyBgColor, setBodyBgColor,
+
+        // 채팅 페이드아웃
         enableFadeOut, setEnableFadeOut,
         fadeDuration, setFadeDuration,
-        chatMarginBottom, setChatMarginBottom,
-        userIconSize, setUserIconSize,
-        stickerSize, setStickerSize,
-        showNotice, setShowNotice,
-        noticeText, setNoticeText,
-        noticeFontSize, setNoticeFontSize,
-        noticeBgColor, setNoticeBgColor,
-        noticeHeight, setNoticeHeight,
-        chatRadius, setChatRadius,
-        noticeRadius, setNoticeRadius,
+
+        // 닉네임
         showNickname, setShowNickname,
-        fontBold, setFontBold,
         blockNickname, setBlockNickname,
-        noticeTextColor, setNoticeTextColor,
-        viewerNickname, setViewerNickname,
-        letterSpacing, setLetterSpacing,
-        paddingLeftRight, setPaddingLeftRight,
-        paddingTopBottom, setPaddingTopBottom,
         nameBgColor, setNameBgColor,
         nameColor, setNameColor,
         nameColorCheck, setNameColorCheck,
-        align, setAlign,
+
+        // 뱃지 / 스티커
+        userIconSize, setUserIconSize,
+        stickerSize, setStickerSize,
+
+        // 알림바
+        showNotice, setShowNotice,
+        noticeText, setNoticeText,
+        noticeFontSize, setNoticeFontSize,
+        noticeTextColor, setNoticeTextColor,
+        noticeBgColor, setNoticeBgColor,
+        noticeHeight, setNoticeHeight,
+        noticeRadius, setNoticeRadius,
+
     } = useCssStore();
     const fontList = [
         {
