@@ -19,17 +19,17 @@ function PreviewBox() {
     const [bgImage, setBgImage] = useState(bg1);
 
     return (
-        <div    
+        <div
             className="preview-panel"
             style={{
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
-        }}>
+            }}>
             <div className='preview-wrapper'>
                 <div className='live-wrapper'>
-                    <h2 style={{ color: bgImage === bg2 ? '#000000' : undefined }}>실시간 미리보기 
+                    <h2 style={{ color: bgImage === bg2 ? '#000000' : undefined }}>실시간 미리보기
                         <p>(배율은 반영되지 않습니다. obs등에서 직접 사이즈 조절해주세요.)</p>
                     </h2>
                     <style>{cssCode}</style>
@@ -45,6 +45,17 @@ function PreviewBox() {
                 <div className="preview-box">
                     <div className="root" style={{ transform: `scale(${previewScale})` }}>
                         <div className="live_overlay_chatting__gG7gu">
+                            <div className="live_overlay_item__Sg18i live_overlay_message__lLCT1">
+                                <div className="live_chatting_message_container__vrI-y live_chatting_message_is_overlay__cALCf">
+                                    <div className="live_chatting_message_wrapper__xpYre"><span className="live_chatting_username_container__m1-i5 live_chatting_username_is_message__jvTvP live_chatting_username_is_overlay__A8Xmr" style={{ marginRight: 6 }}><span className="live_chatting_username_nickname__dDbbj" style={{ color: `rgb(255, 255, 255)` }}><span className=""><span className="name_text__yQG50">광고AD</span></span></span></span><span className="live_chatting_message_text__DyleH">
+                                        <ins className="kakao_ad_area" style={{display:'none'}}
+                                            data-ad-unit="DAN-Q8IGdpuqYxNw4U9w"
+                                            data-ad-width="320"
+                                            data-ad-height="100"></ins>
+                                        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+                                    </span></div>
+                                </div>
+                            </div>
                             <div className="live_overlay_item__Sg18i live_overlay_message__lLCT1">
                                 <div className="live_chatting_message_container__vrI-y live_chatting_message_is_overlay__cALCf">
                                     <div className="live_chatting_message_wrapper__xpYre"><span className="live_chatting_username_container__m1-i5 live_chatting_username_is_message__jvTvP live_chatting_username_is_overlay__A8Xmr" style={{ marginRight: 6 }}><span className="live_chatting_username_wrapper__iJpJB"><span className="live_chatting_username_icon__6Dj7b"><span className="badge_container__a64XB"><img src={gold} alt="" width="28" height="28" /></span></span><span className="live_chatting_username_icon__6Dj7b"><span className="badge_container__a64XB"><img src={icon1} alt="" width="28" height="28" /></span></span><span className="live_chatting_username_icon__6Dj7b"><span className="badge_container__a64XB"><img src={fan} alt="" width="28" height="28" /></span></span></span><span className="live_chatting_username_nickname__dDbbj" style={{ color: `rgb(255, 255, 255)` }}><span className=""><span className="name_text__yQG50">{viewerNickname}</span></span></span></span><span className="live_chatting_message_text__DyleH">님이 1,000치즈를 후원했습니다.<br />치즈후원테스트입니다.<img alt="" src="https://ssl.pstatic.net/static/nng/glive/icon/c_05.png?type=f60_60" /><img alt="" src="https://ssl.pstatic.net/static/nng/glive/icon/c_05.png?type=f60_60" /></span></div>
