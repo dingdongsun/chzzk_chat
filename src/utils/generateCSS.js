@@ -43,6 +43,7 @@ export function generateCSS(state, {
         nameBgColor,
         nameColor,
         nameColorCheck,
+        align
     } = state;
     function rgbaToCss({ r, g, b, a }) {
         return `rgba(${r}, ${g}, ${b}, ${a})`;
@@ -162,6 +163,19 @@ export function generateCSS(state, {
     };
 
 
+    const alignMap = {
+  left: `
+      align-items: flex-start;
+  `,
+  center: `
+      align-items: center;
+  `,
+  right: `
+      align-items: flex-end;
+  `,
+}
+
+
     return `
 @font-face {
   font-family: ${fontFamily};
@@ -187,6 +201,7 @@ ${bodySelector} {
 }
 [class^=live_overlay_chatting] {
   height: ${chattingHeight};
+  ${alignMap[align] || ''}
 }
 ${showNotice
             ? `

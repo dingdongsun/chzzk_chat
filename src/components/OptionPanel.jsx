@@ -42,7 +42,8 @@ function OptionPanel() {
         paddingTopBottom, setPaddingTopBottom,
         nameBgColor, setNameBgColor,
         nameColor, setNameColor,
-        nameColorCheck, setNameColorCheck
+        nameColorCheck, setNameColorCheck,
+        align, setAlign,
     } = useCssStore();
     const fontList = [
         {
@@ -234,6 +235,14 @@ function OptionPanel() {
                         )}
                     </div>
                 )}
+            </div>
+            <div className='chatting_row'>
+                <fieldset>
+                    <span className='label'>정렬</span>
+                    <label><input type="radio" name="align" value="left" checked={align === 'left'} onChange={e => setAlign(e.target.value)} />왼쪽 정렬</label>
+                    <label><input type="radio" name="align" value="center" checked={align === 'center'} onChange={e => setAlign(e.target.value)} />가운데 정렬</label>
+                    <label><input type="radio" name="align" value="right" checked={align === 'right'} onChange={e => setAlign(e.target.value)} />오른쪽 정렬</label>
+                </fieldset>
             </div>
             <div className='chatting_row'>
                 <label>
