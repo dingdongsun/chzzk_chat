@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -91,6 +92,7 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -105,6 +107,7 @@ nav,
 section {
     display: block;
 }
+
 body {
     font-family: 'Paperlogy', Malgun Gothic, 맑은 고딕, Helvetica, Arial, sans-serif;
     background-repeat: no-repeat;
@@ -114,14 +117,17 @@ body {
     line-height: 1.2;
     background-color: #eaeaea;
 }
+
 ol,
 ul {
     list-style: none;
 }
+
 blockquote,
 q {
     quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -129,10 +135,12 @@ q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 .main-wrapper {
     display: flex;
     flex-direction: column;
@@ -140,28 +148,32 @@ table {
     align-items: center;
     justify-content: center;
 }
+
 .custom-view {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     gap: 1rem;
 }
-.custom-view>div {
-}
+
+.custom-view>div {}
+
 .title {
     text-align: center;
     font-size: 24px;
-    font-weight:800;
+    font-weight: 800;
     padding-bottom: 1rem;
     width: calc(80vw + 1rem);
     position: relative;
 }
+
 .title button {
     vertical-align: middle;
     position: absolute;
     right: 0;
     top: -3px;
 }
+
 .option-panel {
     background-color: #ffffff;
     padding: 2rem 1.5rem 2rem 2rem;
@@ -170,35 +182,46 @@ table {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     max-height: 80vh;
 }
+
 .option-panel .option-wrapper {
     display: flex;
     flex-direction: column;
-    max-height: calc(80vh - 4rem);
+    max-height: calc(80vh - 4rem - 100px);
     overflow: auto;
     padding-right: 0.5rem;
 }
+
 /* 스크롤바의 폭 너비 */
 .option-wrapper::-webkit-scrollbar {
-    width: 4px;  
+    width: 4px;
 }
+
 .option-wrapper::-webkit-scrollbar-thumb {
-    background: #00ffa3; /* 스크롤바 색상 */
-    border-radius: 10px; /* 스크롤바 둥근 테두리 */
+    background: #00ffa3;
+    /* 스크롤바 색상 */
+    border-radius: 10px;
+    /* 스크롤바 둥근 테두리 */
 }
+
 .option-wrapper::-webkit-scrollbar-track {
-    background: transparent;  /*스크롤바 뒷 배경 색상*/
+    background: transparent;
+    /*스크롤바 뒷 배경 색상*/
 }
+
 .option-panel .chatting_row {
     padding: 1rem 0;
     border-bottom: 1px solid #e4e4e4
 }
+
 .option-panel .chatting_row:first-of-type {
     padding-top: 0;
 }
+
 .option-panel .chatting_row:last-of-type {
     padding-bottom: 0;
     border-bottom: 0;
 }
+
 .option-panel .label {
     display: block;
     font-size: 16px;
@@ -206,12 +229,14 @@ table {
     padding-bottom: 5px;
     font-weight: 600;
 }
+
 .option-panel .inline_label {
     display: inline-block;
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
 }
+
 .option-panel fieldset label {
     margin-right: 10px;
 }
@@ -225,6 +250,7 @@ table {
     flex-direction: column;
     gap: 1rem;
 }
+
 .preview-panel {
     padding: 2rem 1.5rem 2rem 2rem;
     border-radius: 1rem;
@@ -236,6 +262,7 @@ table {
     background-position: center center;
     background-size: cover;
 }
+
 .preview-panel .preview-wrapper h2 {
     display: flex;
     font-size: 16px;
@@ -244,83 +271,118 @@ table {
     font-weight: 600;
     color: #ffffff;
 }
+
 .preview-panel .preview-wrapper h2 p {
     font-size: 14px;
     font-weight: 400;
     margin-left: 4px;
 }
+
 .preview-panel .preview-wrapper .button-wrapper {
     display: flex;
     align-items: flex-start;
     gap: 5px;
     height: 40px;
 }
+
 .preview-panel [class^=live_overlay_chatting] {
     max-height: calc(80vh - 4rem - 77px);
     overflow: auto;
     padding-right: 0.5rem;
     /* align-items: flex-end; */
 }
+
 [class^=live_overlay_item]:first-of-type {
     margin-bottom: 0;
 }
+
 p.desc {
     color: #666;
     font-size: 14px;
 }
+
 .preset-buttons {
     margin-top: 0.5rem;
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
 }
+
+.adfit-wrapper {
+    margin-top: 1rem;
+    margin-left: -2rem;
+    margin-right: -1.5rem;
+}
+
 @media screen and (max-width: 1400px) {
     .custom-view {
         flex-direction: column;
         padding-bottom: 2rem;
     }
+
     .title {
         width: calc(100vw - 4rem);
         padding-top: 2rem;
     }
+
     .title button {
         right: 0;
         top: calc(2rem - 3px);
     }
-    .option-panel, .preview-panel {
+
+    .option-panel,
+    .preview-panel {
         width: calc(100vw - 4rem);
-        max-height: 500px;
+        max-height: 700px;
     }
-    .option-panel .option-wrapper,
+
+    .option-panel .option-wrapper {
+        max-height: calc(700px - 4rem - 100px);
+    }
     .preview-panel [class^=live_overlay_chatting] {
-        max-height: calc(500px - 4rem - 77px);
+        max-height: calc(700px - 4rem - 77px);
     }
+
     @media screen and (max-width: 768px) {
         .custom-view {
             flex-direction: column;
             padding-bottom: 1rem;
         }
+
         .title {
             width: calc(100vw - 2rem);
             text-align: left;
             font-size: 18px;
         }
+
         .title img {
             height: 30px;
         }
+
         .preview-panel .preview-wrapper h2 p {
             display: none;
         }
-        .option-panel, .preview-panel {
+
+        .option-panel,
+        .preview-panel {
             width: calc(100vw - 2rem);
         }
-        .option-panel .option-wrapper,
-        .preview-panel [class^=live_overlay_chatting] {
-            max-height: calc(500px - 4rem - 77px);
+
+        .option-panel .option-wrapper {
+            max-height: calc(700px - 4rem - 177px);
         }
+
+        .preview-panel [class^=live_overlay_chatting] {
+            max-height: calc(700px - 4rem - 77px);
+        }
+
         .preview-panel .preview-wrapper .button-wrapper button {
             font-size: 11px;
             padding: 5px 6px;
+        }
+
+        .adfit-wrapper {
+            margin-bottom: -1rem;
         }
     }
 }

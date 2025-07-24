@@ -12,6 +12,13 @@ function App() {
             <div className='custom-view'>
                 <div className='option-panel'>
                     <OptionPanel />
+                    <div className="adfit-wrapper">
+                        <ins className="kakao_ad_area" style={{display:'none'}}
+                        data-ad-unit="DAN-Q8IGdpuqYxNw4U9w"
+                        data-ad-width="320"
+                        data-ad-height="100"></ins>
+                        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+                    </div>
                 </div>
                 <PreviewBox />
             </div>
