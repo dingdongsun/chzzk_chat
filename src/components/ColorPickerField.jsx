@@ -29,6 +29,11 @@ function ColorPickerField({ label, color, onChange, disabled, allowTransparent =
         return `rgba(${r}, ${g}, ${b}, ${a})`;
     }
 
+    useEffect(() => {
+        setInputValue(rgbaToCss(color));
+        setUseTransparent(color.a === 0);
+    }, [color]);
+
     function cssToRgba(input) {
         const regex = /rgba?\((\d+),\s*(\d+),\s*(\d+),?\s*([0-9.]+)?\)/i;
         const match = input.match(regex);
