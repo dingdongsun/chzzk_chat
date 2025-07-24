@@ -264,6 +264,16 @@ table {
 [class^=live_overlay_item]:first-of-type {
     margin-bottom: 0;
 }
+p.desc {
+    color: #666;
+    font-size: 14px;
+}
+.preset-buttons {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
 @media screen and (max-width: 1400px) {
     .custom-view {
         flex-direction: column;

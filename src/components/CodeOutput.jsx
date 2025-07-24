@@ -25,7 +25,7 @@ function CodeOutput() {
         <button
             onClick={handleCopy}
         >
-            {copied ? '✅ 복사 완료!' : '📋 CSS 코드 복사'}
+            {copied ? '복사 완료' : 'CSS 코드 복사'}
         </button>
     );
 }

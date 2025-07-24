@@ -1,6 +1,9 @@
 import React from 'react';
 import useCssStore from '../store/useCssStore';
 import ColorPickerField from './ColorPickerField';
+import PresetButton from './PresetButton';
+// import ExportPresetButton from './ExportPresetButton';
+
 function OptionPanel() {
     const {
         fontFamily, setFontFamily,
@@ -129,6 +132,14 @@ function OptionPanel() {
     ];
     return (
         <div className='option-wrapper'>
+            {/* <ExportPresetButton /> */}
+            <div className='chatting_row'>
+                    <span className='label'>샘플 프리셋</span>
+                    <p className="desc">처음 사용하시거나 빠르게 스타일을 적용하고 싶다면 아래 샘플 프리셋을 선택해보세요.</p>
+                    <p className="desc">프리셋은 적용 후 자유롭게 수정하실 수 있습니다.</p>
+                    <p className="desc">추후 다양한 프리셋이 추가될 예정입니다.</p>
+                    <PresetButton />
+            </div>
             <div className='chatting_row'>
                 <label>
                     <span className='label'>시청자 별명 (글자길이 테스트용)</span>

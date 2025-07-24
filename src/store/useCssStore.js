@@ -43,6 +43,7 @@ const useCssStore = create((set) => ({
     nameColor: { r: 255, g: 255, b: 255, a: 1 },
     nameColorCheck: false,
     align: 'left',
+    applyPreset: (preset) => set(() => ({ ...preset })),
     setAlign: (v) => set({ align: v }),
     setNameBgColor: (v) => set({ nameBgColor: v }),
     setNameColor: (v) => set({ nameColor: v }),
