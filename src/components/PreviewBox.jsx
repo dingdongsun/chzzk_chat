@@ -49,9 +49,9 @@ function PreviewBox() {
                                 <div className="live_chatting_message_container__vrI-y live_chatting_message_is_overlay__cALCf">
                                     <div className="live_chatting_message_wrapper__xpYre"><span className="live_chatting_username_container__m1-i5 live_chatting_username_is_message__jvTvP live_chatting_username_is_overlay__A8Xmr" style={{ marginRight: 6 }}><span className="live_chatting_username_nickname__dDbbj" style={{ color: `rgb(255, 255, 255)` }}><span className=""><span className="name_text__yQG50">광고AD</span></span></span></span><span className="live_chatting_message_text__DyleH">
                                         <ins className="kakao_ad_area" style={{display:'none'}}
-                                            data-ad-unit="DAN-Q8IGdpuqYxNw4U9w"
-                                            data-ad-width="320"
-                                            data-ad-height="100"></ins>
+                                        data-ad-unit = "DAN-Q8IGdpuqYxNw4U9w"
+                                        data-ad-width = "250"
+                                        data-ad-height = "250"></ins>
                                         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
                                     </span></div>
                                 </div>
