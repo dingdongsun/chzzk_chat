@@ -42,7 +42,7 @@ function PreviewBox() {
                         <button onClick={() => setBgImage(bg3)}>어두운 배경</button>
                     </div>
                 </div>
-                <div className="preview-box" style={{ transform: `scale(${previewScale})`, transformOrigin: 'center right' }}>
+                <div className="preview-box" style={{ transform: `scale(${previewScale})` }}>
                     <div className="root">
                         <div className="live_overlay_chatting__gG7gu">
                             <div className="live_overlay_item__Sg18i live_overlay_message__lLCT1">
