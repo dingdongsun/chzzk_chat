@@ -12,6 +12,9 @@ function OptionPanel() {
         // 배경
         bodyBgColor, setBodyBgColor,
 
+        // 정렬
+        align, setAlign,
+
         // 글꼴 관련
         fontFamily, setFontFamily,
         fontSize, setFontSize,
@@ -23,9 +26,6 @@ function OptionPanel() {
         shadowX, setShadowX,
         shadowY, setShadowY,
         shadowBlur, setShadowBlur,
-
-        // 정렬
-        align, setAlign,
 
         // 채팅 스타일
         paddingLeftRight, setPaddingLeftRight,
@@ -152,12 +152,13 @@ function OptionPanel() {
         <div className='option-wrapper'>
             {/* <ExportPresetButton /> */}
             <div className='chatting_row'>
-                    <span className='label'>샘플 프리셋</span>
-                    <p className="desc">처음 사용하시거나 빠르게 스타일을 적용하고 싶다면 아래 샘플 프리셋을 선택해보세요.</p>
-                    <p className="desc">프리셋은 적용 후 자유롭게 수정하실 수 있습니다.</p>
-                    <p className="desc">추후 다양한 프리셋이 추가될 예정입니다.</p>
-                    <PresetButton />
+                <span className='label'>샘플 프리셋</span>
+                <p className="desc">처음 사용하시거나 빠르게 스타일을 적용하고 싶다면 아래 샘플 프리셋을 선택해보세요.</p>
+                <p className="desc">프리셋은 적용 후 자유롭게 수정하실 수 있습니다.</p>
+                <p className="desc">추후 다양한 프리셋이 추가될 예정입니다.</p>
+                <PresetButton />
             </div>
+            {/* 시청자 별명 */}
             <div className='chatting_row'>
                 <label>
                     <span className='label'>시청자 별명 (글자길이 테스트용)</span>
@@ -176,6 +177,16 @@ function OptionPanel() {
                     allowTransparent={true}
                 />
             </div>
+            {/* 정렬 */}
+            <div className='chatting_row'>
+                <fieldset>
+                    <span className='label'>정렬</span>
+                    <label><input type="radio" name="align" value="left" checked={align === 'left'} onChange={e => setAlign(e.target.value)} />왼쪽 정렬</label>
+                    <label><input type="radio" name="align" value="center" checked={align === 'center'} onChange={e => setAlign(e.target.value)} />가운데 정렬</label>
+                    <label><input type="radio" name="align" value="right" checked={align === 'right'} onChange={e => setAlign(e.target.value)} />오른쪽 정렬</label>
+                </fieldset>
+            </div>
+            {/* 글꼴 */}
             <div className='chatting_row'>
                 <label>
                     <span className='label'>글꼴 선택</span>
@@ -204,6 +215,25 @@ function OptionPanel() {
                 <label>
                     <span className='inline_label'>글자 두껍게</span>
                     <input type="checkbox" checked={fontBold} onChange={e => setFontBold(e.target.checked)} />
+                </label>
+            </div>
+            <div className='chatting_row'>
+                <label>
+                    <span className='label'>줄 간격 <span className="range-size">{lineHeight}px</span></span>
+                    <input type="range" min="18" max="100" value={lineHeight} onChange={e => setLineHeight(Number(e.target.value))} />
+                </label>
+            </div>
+            <div className='chatting_row'>
+                <label>
+                    <span className='label'>글자 간격 <span className="range-size">{letterSpacing}px</span></span>
+                    <input
+                        type="range"
+                        min="-2"
+                        max="10"
+                        step="0.1"
+                        value={letterSpacing}
+                        onChange={(e) => setLetterSpacing(parseFloat(e.target.value))}
+                    />
                 </label>
             </div>
             <div className='chatting_row'>
@@ -265,33 +295,7 @@ function OptionPanel() {
                     </div>
                 )}
             </div>
-            <div className='chatting_row'>
-                <fieldset>
-                    <span className='label'>정렬</span>
-                    <label><input type="radio" name="align" value="left" checked={align === 'left'} onChange={e => setAlign(e.target.value)} />왼쪽 정렬</label>
-                    <label><input type="radio" name="align" value="center" checked={align === 'center'} onChange={e => setAlign(e.target.value)} />가운데 정렬</label>
-                    <label><input type="radio" name="align" value="right" checked={align === 'right'} onChange={e => setAlign(e.target.value)} />오른쪽 정렬</label>
-                </fieldset>
-            </div>
-            <div className='chatting_row'>
-                <label>
-                    <span className='label'>줄 간격 <span className="range-size">{lineHeight}px</span></span>
-                    <input type="range" min="18" max="100" value={lineHeight} onChange={e => setLineHeight(Number(e.target.value))} />
-                </label>
-            </div>
-            <div className='chatting_row'>
-                <label>
-                    <span className='label'>글자 간격 <span className="range-size">{letterSpacing}px</span></span>
-                    <input
-                        type="range"
-                        min="-2"
-                        max="10"
-                        step="0.1"
-                        value={letterSpacing}
-                        onChange={(e) => setLetterSpacing(parseFloat(e.target.value))}
-                    />
-                </label>
-            </div>
+            {/* 채팅 */}
             <div className='chatting_row'>
                 <label>
                     <span className='label'>채팅 상하 여백 <span className="range-size">{paddingTopBottom}px</span></span>
@@ -333,6 +337,12 @@ function OptionPanel() {
                 <label>
                     <span className='label'>채팅 박스 둥글기 <span className="range-size">{chatRadius}px</span></span>
                     <input type="range" min="0" max="48" value={chatRadius} onChange={e => setChatRadius(Number(e.target.value))} />
+                </label>
+            </div>
+            <div className='chatting_row'>
+                <label>
+                    <span className='label'>채팅 사이 간격 <span className="range-size">{chatMarginBottom}px</span></span>
+                    <input type="range" min="0" max="50" value={chatMarginBottom} onChange={e => setChatMarginBottom(Number(e.target.value))} />
                 </label>
             </div>
             <div className='chatting_row'>
@@ -413,19 +423,13 @@ function OptionPanel() {
                     <input type="checkbox" checked={enableFadeOut} onChange={e => setEnableFadeOut(e.target.checked)} />
                 </label>
                 {enableFadeOut && (
-                <div className="effectOptions">
-                    <label>
-                        <span className='label'>채팅 유지 시간 <span className="range-size">{fadeDuration}초</span></span>
-                        <input type="range" min="10" max="60" value={fadeDuration} onChange={e => setFadeDuration(Number(e.target.value))} />
-                    </label>
-                </div>
+                    <div className="effectOptions">
+                        <label>
+                            <span className='label'>채팅 유지 시간 <span className="range-size">{fadeDuration}초</span></span>
+                            <input type="range" min="10" max="60" value={fadeDuration} onChange={e => setFadeDuration(Number(e.target.value))} />
+                        </label>
+                    </div>
                 )}
-            </div>
-            <div className='chatting_row'>
-                <label>
-                    <span className='label'>채팅 사이 간격 <span className="range-size">{chatMarginBottom}px</span></span>
-                    <input type="range" min="0" max="50" value={chatMarginBottom} onChange={e => setChatMarginBottom(Number(e.target.value))} />
-                </label>
             </div>
             <div className='chatting_row'>
                 <label>
@@ -439,20 +443,20 @@ function OptionPanel() {
                     <input type="checkbox" checked={blockNickname} onChange={e => setBlockNickname(e.target.checked)} />
                 </label>
                 {blockNickname && (
-                <div className='effectOptions'>
-                {/* 방송공지 사용 체크시 노출 */}
-                    <ColorPickerField label="이름 배경색" color={nameBgColor} onChange={setNameBgColor} allowTransparent={true} />
-                </div>
+                    <div className='effectOptions'>
+                        {/* 방송공지 사용 체크시 노출 */}
+                        <ColorPickerField label="이름 배경색" color={nameBgColor} onChange={setNameBgColor} allowTransparent={true} />
+                    </div>
                 )}
             </div>
             <div className="chatting_row">
-                    <label>
-                        <span className='inline_label'>시청자 이름 글자색 강제설정</span>
-                        <input type="checkbox" checked={nameColorCheck} onChange={e => setNameColorCheck(e.target.checked)} />
-                    </label>
-                    {nameColorCheck && (
-                        <ColorPickerField label="" color={nameColor} onChange={setNameColor} allowTransparent={false} />
-                    )}
+                <label>
+                    <span className='inline_label'>시청자 이름 글자색 강제설정</span>
+                    <input type="checkbox" checked={nameColorCheck} onChange={e => setNameColorCheck(e.target.checked)} />
+                </label>
+                {nameColorCheck && (
+                    <ColorPickerField label="" color={nameColor} onChange={setNameColor} allowTransparent={false} />
+                )}
             </div>
             <div className='chatting_row'>
                 <label>
@@ -472,36 +476,36 @@ function OptionPanel() {
                     <input type="checkbox" checked={showNotice} onChange={e => setShowNotice(e.target.checked)} />
                 </label>
                 {showNotice && (
-                <div className='effectOptions'>
-                {/* 방송공지 사용 체크시 노출 */}
-                    <label>
-                        <span className='label'>공지 내용</span>
-                        <input type="text" value={noticeText} onChange={e => setNoticeText(e.target.value)} />
-                    </label>
+                    <div className='effectOptions'>
+                        {/* 방송공지 사용 체크시 노출 */}
+                        <label>
+                            <span className='label'>공지 내용</span>
+                            <input type="text" value={noticeText} onChange={e => setNoticeText(e.target.value)} />
+                        </label>
 
-                    <label>
-                        <span className='label'>공지 글자 크기 <span className="range-size">{noticeFontSize}px</span></span>
-                        <input type="range" min="16" max="64" value={noticeFontSize} onChange={e => setNoticeFontSize(Number(e.target.value))} />
-                    </label>
+                        <label>
+                            <span className='label'>공지 글자 크기 <span className="range-size">{noticeFontSize}px</span></span>
+                            <input type="range" min="16" max="64" value={noticeFontSize} onChange={e => setNoticeFontSize(Number(e.target.value))} />
+                        </label>
 
-                    <ColorPickerField label="공지 글자색" color={noticeTextColor} onChange={setNoticeTextColor} allowTransparent={false} />
+                        <ColorPickerField label="공지 글자색" color={noticeTextColor} onChange={setNoticeTextColor} allowTransparent={false} />
 
-                    <ColorPickerField
-                        label="공지 배경색"
-                        color={noticeBgColor}
-                        onChange={setNoticeBgColor}
-                        allowTransparent={true}
-                    />
-                    <label>
-                        <span className='label'>공지 높이 <span className="range-size">{noticeHeight}px</span></span>
-                        <input type="range" min="40" max="100" value={noticeHeight} onChange={e => setNoticeHeight(Number(e.target.value))} />
-                    </label>
-                    <label>
-                        <span className='label'>공지 박스 둥글기 <span className="range-size">{noticeRadius}px</span></span>
-                        <input type="range" min="0" max="48" value={noticeRadius} onChange={e => setNoticeRadius(Number(e.target.value))} />
-                    </label>
-                {/* 방송공지 사용 체크시 노출 */}
-                </div>
+                        <ColorPickerField
+                            label="공지 배경색"
+                            color={noticeBgColor}
+                            onChange={setNoticeBgColor}
+                            allowTransparent={true}
+                        />
+                        <label>
+                            <span className='label'>공지 높이 <span className="range-size">{noticeHeight}px</span></span>
+                            <input type="range" min="40" max="100" value={noticeHeight} onChange={e => setNoticeHeight(Number(e.target.value))} />
+                        </label>
+                        <label>
+                            <span className='label'>공지 박스 둥글기 <span className="range-size">{noticeRadius}px</span></span>
+                            <input type="range" min="0" max="48" value={noticeRadius} onChange={e => setNoticeRadius(Number(e.target.value))} />
+                        </label>
+                        {/* 방송공지 사용 체크시 노출 */}
+                    </div>
                 )}
             </div>
         </div>
